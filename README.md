@@ -57,3 +57,22 @@ Map URL หรือ Path เพื่อกำหนดเส้นทางใ
 @DeleteMapping
 
 กำหนดการทำงานเมื่อมี Request  ส่งมาในรูปแบบ HTTP Request DELETE Method (ระดับเมธอด)
+
+## Java POJO
+
+POJO(Plain Old Java Object)  คือ Java Object แบบธรรมดาทำงานได้ด้วยตัวเองหรือก็คือไม่มีการ Extends , Implements ,Interface เพิ่มเติมเข้ามา มีเมธอดที่ทำหน้าที่ในการจัดการข้อมูลภายในตัว (Getter , Setter)
+
+## Jackson
+
+ไลบราลี่ที่ใช้สำหรับแปลงข้อมูลไปมาระหว่าง JSON และ Javaa POJO (อยู่ใน Spring Boot Starter web)
+
+## จัดการDAOด้วย JPA Repository
+
+ใช้ Interface ที่ชื่อว่า JPARepository ใน spring Data JPA เพื่อลดความยุ่งยากในการจัดการฐานข้อมูล และJPARepository มีเมธอดมาตรฐานให้เรียกใช้ได้เลยไม่ต้องสร้าง Repository Class
+### เมธอดมาตรฐาน
+| ชื่อเมธอด        | ความหมาย               |
+|  ---           | ---                    |
+| findAll()      | ดึงข้อมูลทั้งหมด           |
+| findbyId(id)   | ดึงข้อมูลตามId ที่ส่งเข้าไป   |
+| save(obj)      | บันทึก/อัปเดต ข้อมูล       |
+| delateById(id) | ลบข้อมูลตาม Id ที่ส่งเข้าไป  |
